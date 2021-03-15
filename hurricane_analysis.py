@@ -79,16 +79,15 @@ hurricanes = {}
 
 
 # write your construct hurricane dictionary function here:
-def construct_hurricanesionary(names, months, years, max_sustained_winds, areas_affected, damages, deaths):
+def construct_hurricanesionary(names, months, years, max_sustained_winds, areas_affected, updated_damages, deaths): # should be using the updated damages
     for i in range(len(names)):
         hurricanes[names[i]] = {'Name': names[i], 'Month': months[i], 'Year': years[i],
                                 'Max Sustained Wind': max_sustained_winds[i], 'Areas Affected': areas_affected[i],
-                                'Damage': damages[i], 'Death': deaths[i]}
+                                'Damage': updated_damages[i], 'Death': deaths[i]}
     return hurricanes
 
 
-print(
-    construct_hurricanesionary(names, months, years, max_sustained_winds, areas_affected, updated_damages, deaths))
+construct_hurricanesionary(names, months, years, max_sustained_winds, areas_affected, updated_damages, deaths) # Old version printed None as you were calling the function.
 print(hurricanes["Carol"])
 
 
